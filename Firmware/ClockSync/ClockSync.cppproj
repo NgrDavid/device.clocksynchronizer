@@ -103,6 +103,7 @@
     <ListValues>
       <Value>C:\Users\Filipe Carvalho\Documents\BitBucket\Device.Wear.Basestation\Firmware\Master</Value>
       <Value>C:\Users\Filipe Carvalho\Documents\BitBucket\Device.Wear.ClockSync (before Bitbucket)\Firmware\ClockSync</Value>
+      <Value>C:\Users\Filipe Carvalho\Documents\BitBucket\Device.ClockSync\Firmware\ClockSync</Value>
     </ListValues>
   </avrgcccpp.linker.libraries.LibrarySearchPaths>
 </AvrGccCpp>
@@ -150,6 +151,7 @@
     <ListValues>
       <Value>C:\Users\Filipe Carvalho\Documents\BitBucket\Device.Wear.Basestation\Firmware\Master</Value>
       <Value>C:\Users\Filipe Carvalho\Documents\BitBucket\Device.Wear.ClockSync (before Bitbucket)\Firmware\ClockSync</Value>
+      <Value>C:\Users\Filipe Carvalho\Documents\BitBucket\Device.ClockSync\Firmware\ClockSync</Value>
     </ListValues>
   </avrgcccpp.linker.libraries.LibrarySearchPaths>
   <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
