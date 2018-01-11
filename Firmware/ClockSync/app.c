@@ -26,7 +26,7 @@ static const uint8_t default_device_name[] = "ClockSynchronizer";
 void hwbp_app_initialize(void)
 {
 	/* Start core */
-	core_func_start_core(1152, 1, 0, 1, 1, 0, (uint8_t*)(&app_regs), APP_NBYTES_OF_REG_BANK, APP_REGS_ADD_MAX - APP_REGS_ADD_MIN + 1, default_device_name);
+	core_func_start_core(1152, 1, 0, 1, 0, 0, (uint8_t*)(&app_regs), APP_NBYTES_OF_REG_BANK, APP_REGS_ADD_MAX - APP_REGS_ADD_MIN + 1, default_device_name);
 }
 
 /************************************************************************/
