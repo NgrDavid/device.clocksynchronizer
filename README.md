@@ -1,7 +1,7 @@
 ## Harp Clock Synchronizer ##
 
 ...
-![ClockSynchronizer](docs\assets\clockSynchronizer.png)
+![harpclocksync](./Assets/pcb.png)
 
 ### Key Features ###
 
