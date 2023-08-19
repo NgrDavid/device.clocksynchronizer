@@ -25,8 +25,29 @@ static const uint8_t default_device_name[] = "ClockSynchronizer";
 
 void hwbp_app_initialize(void)
 {
+	
+	/* Define versions */
+	uint8_t hwH = 1;
+	uint8_t hwL = 0;
+	uint8_t fwH = 1;
+	uint8_t fwL = 0;
+	uint8_t ass = 0;
+	
 	/* Start core */
-	core_func_start_core(1152, 1, 0, 1, 0, 0, (uint8_t*)(&app_regs), APP_NBYTES_OF_REG_BANK, APP_REGS_ADD_MAX - APP_REGS_ADD_MIN + 1, default_device_name);
+	core_func_start_core(
+	1152,
+	hwH, hwL,
+	fwH, fwL,
+	ass,
+	(uint8_t*)(&app_regs),
+	APP_NBYTES_OF_REG_BANK,
+	APP_REGS_ADD_MAX - APP_REGS_ADD_MIN + 1,
+	default_device_name,
+	true,	// The device is _not_ able to repeat the harp timestamp clock
+	true,	// The device is _not_ able to generate the harp timestamp clock
+	3		// Default timestamp offset
+	);
+	
 }
 
 /************************************************************************/
@@ -51,7 +72,9 @@ void core_callback_catastrophic_error_detected(void)
 /************************************************************************/
 /* Initialization Callbacks                                             */
 /************************************************************************/
-void core_callback_1st_config_hw_after_boot(void)
+void core_callback_define_clock_default(void) {}
+
+void core_callback_initialize_hardware(void)
 {
 	/* Initialize IOs */
 	/* Don't delete this function!!! */
@@ -97,6 +120,16 @@ void core_callback_t_after_exec(void) {}
 void core_callback_t_new_second(void) {}
 void core_callback_t_500us(void) {}
 void core_callback_t_1ms(void) {}
+
+
+/************************************************************************/
+/* Callbacks: clock control                                              */
+/************************************************************************/
+void core_callback_clock_to_repeater(void) {}
+void core_callback_clock_to_generator(void) {}
+void core_callback_clock_to_unlock(void) {}
+void core_callback_clock_to_lock(void) {}
+
 
 /************************************************************************/
 /* Callbacks: uart control                                              */
